@@ -1,3 +1,7 @@
+/* Pour que poppins marche, il faut l'importer sur google */
+
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 * {
   padding: 0;
   margin: 0;
@@ -20,12 +24,24 @@ header {
   align-items: center;
   justify-content: space-evenly;
   transition: 0, 5s;
+  background: white;
+  box-shadow: 0 5px 10px rgba(112, 112, 112, 0.137);
 }
-.nom {
-  color: rgb(68, 66, 66);
-  font-weight: bold;
-  font-size: 2em;
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+.logo a {
+  color: rgb(59, 58, 58);
   text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 10px;
 }
 .nn {
   display: flex;
@@ -62,26 +78,31 @@ header .nn li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./PHOTOS/Screenshot_20231015-111141.jpg\ -\ Raccourci.lnk);
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    url("./PHOTOS/cover.jpg");
   background-size: cover;
 }
 .hh .ee {
   max-width: 70%;
   text-align: center;
+  color: white;
 }
 .hh .ee h2 {
-  color: black;
   font-size: 3em;
   text-transform: capitalize;
 }
-.hh p:nth-child(2) {
-  color: black;
+.hh p {
   font-size: 1, 2em;
+  color: white;
 }
 .btn1 {
   font-size: 1em;
   color: antiquewhite;
-  background: rgb(3, 3, 44);
+  background: #54a2ee;
   padding: 10px 20px;
   display: inline-block;
   margin-top: 20px;
@@ -90,11 +111,12 @@ header .nn li a:hover {
   letter-spacing: 2px;
   transition: 0, 5s;
   margin-left: 10px;
+  transition: all 0.5s ease-in-out;
 }
 .btn2 {
   font-size: 1em;
   color: antiquewhite;
-  background: rgb(46, 2, 36);
+  background: #43ddee;
   padding: 10px 20px;
   display: inline-block;
   margin-top: 20px;
@@ -103,6 +125,7 @@ header .nn li a:hover {
   letter-spacing: 2px;
   transition: 0, 5s;
   margin-left: 10px;
+  transition: all 0.5s ease-in-out;
 }
 .btn1:hover {
   letter-spacing: 4px;
@@ -120,25 +143,42 @@ section {
   display: flex;
   justify-content: space-between;
 }
-.dd.col50 {
+
+/* Il y a toujours un espace entre parent et enfant pa comme ça .dd.col50*/
+.dd .col50 {
   position: relative;
-  width: 48%;
+  flex: 1;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
-.dd.col50 h2 {
+.dd .col50 h2 {
   margin-bottom: 20px;
 }
 .titre-text {
-  color: black;
+  color: #54a2ee;
   font-size: 2rem;
   font-weight: 300px;
   text-transform: capitalize;
 }
-.dd.col50 img {
-  height: 450px;
-  width: 600px;
-  position: relative;
+
+.dd .col50:nth-child(2) .img {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dd .col50 img {
+  /* Eviter de mettre les valeurs statiques sur les images , utilise les % */
+  /* height: 450px;
+  width: 600px; */
+  width: 60%;
+}
+
+/* Code pour la classe logo */
+.logo-text {
+  color: #54a2ee;
 }
 .titre {
   display: flex;
@@ -146,6 +186,11 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+/* Center le texte du paragraphe */
+.titre p {
+  text-align: center;
 }
 .arts {
   margin-top: -100px;
@@ -155,12 +200,21 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 40px;
+  gap: 25px;
 }
 .arts .contenue .box {
   width: 350px;
   margin-top: 20px;
   border: 20px solid white;
-  box-shadow: 20px 15px 35px rgb(0, 0, 0, 0.8);
+  box-shadow: 10px 15px 30px rgba(136, 136, 136, 0.387);
+}
+
+/* Ajout de l'animation quand on y met le curseur */
+
+.box:hover {
+  transform: scale(1.04);
+  transition: 0.5s;
+  cursor: pointer;
 }
 .arts .contenue .box .imbox {
   position: relative;
@@ -168,49 +222,75 @@ section {
   height: 300px;
 }
 .arts .contenue .box .imbox img {
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 300px;
   object-fit: cover;
+  border-radius: 5px;
 }
 .arts .contenue .box .text {
   text-align: center;
   font-weight: 300px;
   color: black;
+  margin-top: 1rem;
 }
 .arts .contenue .box .text h3 {
   font-weight: 400px;
 }
+
+/* Code pour la section fournisseur */
+.fournisseur-container {
+  background-color: #54a2ee;
+}
 .fournisseur {
   margin-top: -100px;
+  padding-top: 1rem;
+}
+.fournisseur .titre-text {
+  color: white;
+}
+.fournisseur p {
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
 }
 .fournisseur .contenue {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 50px;
+  gap: 25px;
 }
 .fournisseur .contenue .box {
   width: 250px;
-  margin: 15px;
+  margin: 15px solid white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ajout animation  */
+.fournisseur .contenue .box:hover .text {
+  color: white;
+  transition: 0.5s;
+  cursor: pointer;
 }
 .fournisseur .contenue .box img {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  top: 0;
-  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
   object-fit: cover;
 }
-.fournisseur .contenue .box h3 {
-  color: black;
-  font-weight: 400;
+
+.fournisseur .contenue .box .text {
   text-align: center;
+  font-weight: 300px;
+  margin-top: 1rem;
 }
+
 .contact {
-  background-image: url(./PHOTOS/Screenshot_20231015-121550.jpg);
+  background-image: linear-gradient(90deg, #000000a2, #000000bb),
+    url(./PHOTOS/Screenshot_20231015-121550.jpg);
   background-size: cover;
   box-shadow: 2px rgb(3, 3, 15);
   width: 100%;
@@ -271,4 +351,6 @@ section {
   text-decoration: none;
   font-weight: 600;
   font-style: italic;
+  text-align: center;
+  padding: 10px;
 }
