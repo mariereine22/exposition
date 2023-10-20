@@ -189,11 +189,86 @@ section {
 .fournisseur .contenue {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   justify-content: center;
   margin-top: 40px;
 }
 .fournisseur .contenue .box {
   width: 250px;
-  margin: 15px solid white;
+  margin: 15px;
+}
+.fournisseur .contenue .box img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.fournisseur .contenue .box h3 {
+  color: black;
+  font-weight: 400;
+  text-align: center;
+}
+.contact {
+  background-image: url(./PHOTOS/Screenshot_20231015-121550.jpg);
+  background-size: cover;
+  box-shadow: 2px rgb(3, 3, 15);
+  width: 100%;
+  background-position: unset;
+}
+.contact p {
+  color: white;
+}
+.contactform {
+  padding: 75px 60px;
+  background: rgb(244, 231, 231);
+  box-shadow: 5px 15px 50px black;
+  max-width: 500px;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 38%;
+}
+.contactform .inputboite {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+.contactform h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.contactform .inputboite input,
+.contactform .inputboite textarea {
+  width: 100%;
+  border: 1px solid #555;
+  padding: 10px;
+  color: black;
+  outline: none;
+  font-size: 16px;
+  font-weight: 300;
+  resize: none;
+}
+.contactform .inputboite input[type="submit"] {
+  font-size: 1em;
+  font-weight: 700;
+  color: white;
+  background-color: #43ddee;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  outline: none;
+  border: none;
+  transition: 0.5s;
+  max-width: 120px;
+  align-items: center;
+  justify-content: center;
+}
+.moi {
+  color: #43ddee;
+  text-decoration: none;
+  font-weight: 600;
+  font-style: italic;
 }
